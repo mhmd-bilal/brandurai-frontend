@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-vt323);
+  --font-sans: var(--font-jersey-15);
 }
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  overflow-y: hidden;
 }
 
 @media (prefers-color-scheme: dark) {

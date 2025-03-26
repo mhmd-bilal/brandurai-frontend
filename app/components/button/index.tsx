@@ -5,13 +5,14 @@ import './button.css'; // Import the CSS file for styles
 interface ButtonProps {
   label: string;
   onClick: () => void;
+  size?: "small" | "medium" | "large"; // Added size prop
 }
 
-const Button: React.FC<ButtonProps> = ({ label, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ label, onClick, size = "medium" }) => { // Default size to medium
   return (
     <div className="button-border">
       <div className="button-base">
-        <button className="button" onClick={onClick}>
+        <button className={`button ${size}`} onClick={onClick}> 
           {label}
         </button>
       </div>
