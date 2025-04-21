@@ -22,7 +22,7 @@ const MarketSelection: React.FC<{
       <h1 className="text-2xl text-black">Choose your brand</h1>
       <div className="flex flex-col gap-8 justify-center items-center">
         {/* Brand Boxes */}
-        <div className="border-2 border-gray-300 rounded-lg pt-4 pb-8 px-12 flex flex-col items-center gap-4">
+        <div className="border-2 bg-white border-gray-300 rounded-lg pt-4 pb-8 px-12 flex flex-col items-center gap-4">
           <h2 className="text-2xl text-black">Cars</h2>
           <div className="flex flex-row gap-8">
             <div 
@@ -45,7 +45,7 @@ const MarketSelection: React.FC<{
             </div>
           </div>
         </div>
-        <div className="border-2 border-gray-300 rounded-lg pt-4 pb-8 px-12 flex flex-col items-center gap-4">
+        <div className="border-2 bg-white border-gray-300 rounded-lg pt-4 pb-8 px-12 flex flex-col items-center gap-4">
           <h2 className="text-2xl text-black">Laptops</h2>
           <div className="flex flex-row gap-8">
             <div 

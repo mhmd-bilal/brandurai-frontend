@@ -27,7 +27,7 @@ const DragItem: React.FC<DragItemProps> = ({ name, type, extraInfo, disabled = f
   return (
     <div
       ref={drag}
-      className={`p-3 mb-3 rounded transition relative
+      className={`p-2 mb-3 rounded transition relative flex flex-row justify-between
         ${isDragging ? "opacity-50" : "opacity-100"}
         ${disabled 
           ? "bg-gray-300 text-gray-500 cursor-not-allowed opacity-60" 
@@ -39,10 +39,10 @@ const DragItem: React.FC<DragItemProps> = ({ name, type, extraInfo, disabled = f
     >
       <div className="font-medium">{name}</div>
       {extraInfo && (
-        <div className="text-xs mt-1 opacity-80">{extraInfo}</div>
+        <div className="text-lg mt-0 opacity-80">{extraInfo}</div>
       )}
       {disabled && (
-        <div className="absolute top-1 right-1 text-xs text-red-500 font-bold">
+        <div className="absolute top-3 right-1 text-xs text-red-500 font-bold">
           Not enough budget
         </div>
       )}

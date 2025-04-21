@@ -1,13 +1,72 @@
 // Game data for Round 2 and 3 with increased difficulty
+export const ROUND_1_DATA = {
+  initialBudget: 30000,
+  targetROI: 5000,
+  timeLimit: 120, // 2 minutes
+  audienceTypes: {
+    Teenagers: {
+      reach: 500000,
+      description: "Young people age 13-19",
+    },
+    Adults: {
+      reach: 1200000,
+      description: "Working adults age 20-64",
+    },
+    Seniors: {
+      reach: 700000,
+      description: "Older adults age 65+",
+    },
+  },
+  channelTypes: {
+    "Social Media": {
+      cost: 5000,
+      description: "Facebook, Instagram, TikTok",
+    },
+    "TV Ads": {
+      cost: 15000,
+      description: "Television commercials",
+    },
+    Billboards: {
+      cost: 8000,
+      description: "Physical advertising displays",
+    },
+  },
+  // Effectiveness scores (match percentages)
+  effectiveness: {
+    Teenagers: {
+      "Social Media": 85,
+      "TV Ads": 45,
+      Billboards: 30,
+    },
+    Adults: {
+      "Social Media": 60,
+      "TV Ads": 75,
+      Billboards: 55,
+    },
+    Seniors: {
+      "Social Media": 30,
+      "TV Ads": 80,
+      Billboards: 65,
+    },
+  },
+  // Extra rules
+  rules: {
+    requiredCombinations: 3, // Must fill all 3 slots
+    channelLimits: {
+      "Social Media": 2,  // Can only use Social Media twice
+      "Billboards": 1  // Can only use Podcasts once
+    }
+  },
+};
 
 // Round 2: Expanded audiences and channels with more nuanced effectiveness
 export const ROUND_2_DATA = {
-    initialBudget: 45000,
+    initialBudget: 25000,
     targetROI: 7500,
     timeLimit: 100, // 1:40 minutes
     audienceTypes: {
       "Young Professionals": {
-        reach: 800000,
+        reach: 900000,
         description: "Age 25-35, career-focused, tech-savvy"
       },
       "Parents": {

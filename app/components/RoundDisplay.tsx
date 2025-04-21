@@ -7,6 +7,7 @@ import Button from "./button";
 import DragItem from "./DragItem";
 import DropZone from "./DropZone";
 // import { FaPiggyBank, FaUsers } from 'react-icons/fa';
+import { ROUND_1_DATA, ROUND_2_DATA, ROUND_3_DATA } from '../roundData'; // Import round data
 
 // Define item types
 const ITEM_TYPES = {
@@ -15,284 +16,284 @@ const ITEM_TYPES = {
 };
 
 // Round 1 data (original game data)
-const ROUND_1_DATA = {
-  initialBudget: 30000,
-  targetROI: 5000,
-  timeLimit: 120, // 2 minutes
-  audienceTypes: {
-    Teenagers: {
-      reach: 500000,
-      description: "Young people age 13-19",
-    },
-    Adults: {
-      reach: 1200000,
-      description: "Working adults age 20-64",
-    },
-    Seniors: {
-      reach: 700000,
-      description: "Older adults age 65+",
-    },
-  },
-  channelTypes: {
-    "Social Media": {
-      cost: 5000,
-      description: "Facebook, Instagram, TikTok",
-    },
-    "TV Ads": {
-      cost: 15000,
-      description: "Television commercials",
-    },
-    Billboards: {
-      cost: 8000,
-      description: "Physical advertising displays",
-    },
-  },
-  // Effectiveness scores (match percentages)
-  effectiveness: {
-    Teenagers: {
-      "Social Media": 85,
-      "TV Ads": 45,
-      Billboards: 30,
-    },
-    Adults: {
-      "Social Media": 60,
-      "TV Ads": 75,
-      Billboards: 55,
-    },
-    Seniors: {
-      "Social Media": 30,
-      "TV Ads": 80,
-      Billboards: 65,
-    },
-  },
-  // Extra rules
-  rules: {
-    requiredCombinations: 3, // Must fill all 3 slots
-  },
-};
+// const ROUND_1_DATA = {
+//   initialBudget: 30000,
+//   targetROI: 5000,
+//   timeLimit: 120, // 2 minutes
+//   audienceTypes: {
+//     Teenagers: {
+//       reach: 500000,
+//       description: "Young people age 13-19",
+//     },
+//     Adults: {
+//       reach: 1200000,
+//       description: "Working adults age 20-64",
+//     },
+//     Seniors: {
+//       reach: 700000,
+//       description: "Older adults age 65+",
+//     },
+//   },
+//   channelTypes: {
+//     "Social Media": {
+//       cost: 5000,
+//       description: "Facebook, Instagram, TikTok",
+//     },
+//     "TV Ads": {
+//       cost: 15000,
+//       description: "Television commercials",
+//     },
+//     Billboards: {
+//       cost: 8000,
+//       description: "Physical advertising displays",
+//     },
+//   },
+//   // Effectiveness scores (match percentages)
+//   effectiveness: {
+//     Teenagers: {
+//       "Social Media": 85,
+//       "TV Ads": 45,
+//       Billboards: 30,
+//     },
+//     Adults: {
+//       "Social Media": 60,
+//       "TV Ads": 75,
+//       Billboards: 55,
+//     },
+//     Seniors: {
+//       "Social Media": 30,
+//       "TV Ads": 80,
+//       Billboards: 65,
+//     },
+//   },
+//   // Extra rules
+//   rules: {
+//     requiredCombinations: 3, // Must fill all 3 slots
+//   },
+// };
 
 // Round 2 data
-const ROUND_2_DATA = {
-  initialBudget: 45000,
-  targetROI: 7500,
-  timeLimit: 100, // 1:40 minutes
-  audienceTypes: {
-    "Young Professionals": {
-      reach: 800000,
-      description: "Age 25-35, career-focused, tech-savvy",
-    },
-    Parents: {
-      reach: 1400000,
-      description: "Adults with children, family-oriented",
-    },
-    Students: {
-      reach: 600000,
-      description: "College and university students",
-    },
-    "Business Owners": {
-      reach: 350000,
-      description: "Entrepreneurs and small business leaders",
-    },
-  },
-  channelTypes: {
-    "Social Media": {
-      cost: 7000,
-      description: "Instagram, TikTok, Twitter campaigns",
-    },
-    "Search Ads": {
-      cost: 12000,
-      description: "Google and Bing paid search results",
-    },
-    "Email Marketing": {
-      cost: 5000,
-      description: "Targeted email campaigns to existing lists",
-    },
-    "Podcast Sponsorships": {
-      cost: 15000,
-      description: "Ads on popular podcast networks",
-    },
-  },
-  // Effectiveness scores (match percentages)
-  effectiveness: {
-    "Young Professionals": {
-      "Social Media": 80,
-      "Search Ads": 75,
-      "Email Marketing": 60,
-      "Podcast Sponsorships": 85,
-    },
-    Parents: {
-      "Social Media": 65,
-      "Search Ads": 80,
-      "Email Marketing": 70,
-      "Podcast Sponsorships": 50,
-    },
-    Students: {
-      "Social Media": 90,
-      "Search Ads": 60,
-      "Email Marketing": 40,
-      "Podcast Sponsorships": 75,
-    },
-    "Business Owners": {
-      "Social Media": 55,
-      "Search Ads": 85,
-      "Email Marketing": 80,
-      "Podcast Sponsorships": 60,
-    },
-  },
-  // Extra rules
-  rules: {
-    requiredCombinations: 4, // Must fill all 4 slots
-    channelLimits: {
-      "Social Media": 2, // Can only use Social Media twice
-      "Podcast Sponsorships": 1, // Can only use Podcasts once
-    },
-  },
-};
+// const ROUND_2_DATA = {
+//   initialBudget: 45000,
+//   targetROI: 7500,
+//   timeLimit: 100, // 1:40 minutes
+//   audienceTypes: {
+//     "Young Professionals": {
+//       reach: 800000,
+//       description: "Age 25-35, career-focused, tech-savvy",
+//     },
+//     Parents: {
+//       reach: 1400000,
+//       description: "Adults with children, family-oriented",
+//     },
+//     Students: {
+//       reach: 600000,
+//       description: "College and university students",
+//     },
+//     "Business Owners": {
+//       reach: 350000,
+//       description: "Entrepreneurs and small business leaders",
+//     },
+//   },
+//   channelTypes: {
+//     "Social Media": {
+//       cost: 7000,
+//       description: "Instagram, TikTok, Twitter campaigns",
+//     },
+//     "Search Ads": {
+//       cost: 12000,
+//       description: "Google and Bing paid search results",
+//     },
+//     "Email Marketing": {
+//       cost: 5000,
+//       description: "Targeted email campaigns to existing lists",
+//     },
+//     "Podcast Sponsorships": {
+//       cost: 15000,
+//       description: "Ads on popular podcast networks",
+//     },
+//   },
+//   // Effectiveness scores (match percentages)
+//   effectiveness: {
+//     "Young Professionals": {
+//       "Social Media": 80,
+//       "Search Ads": 75,
+//       "Email Marketing": 60,
+//       "Podcast Sponsorships": 85,
+//     },
+//     Parents: {
+//       "Social Media": 65,
+//       "Search Ads": 80,
+//       "Email Marketing": 70,
+//       "Podcast Sponsorships": 50,
+//     },
+//     Students: {
+//       "Social Media": 90,
+//       "Search Ads": 60,
+//       "Email Marketing": 40,
+//       "Podcast Sponsorships": 75,
+//     },
+//     "Business Owners": {
+//       "Social Media": 55,
+//       "Search Ads": 85,
+//       "Email Marketing": 80,
+//       "Podcast Sponsorships": 60,
+//     },
+//   },
+//   // Extra rules
+//   rules: {
+//     requiredCombinations: 4, // Must fill all 4 slots
+//     channelLimits: {
+//       "Social Media": 2, // Can only use Social Media twice
+//       "Podcast Sponsorships": 1, // Can only use Podcasts once
+//     },
+//   },
+// };
 
-// Round 3 data
-const ROUND_3_DATA = {
-  initialBudget: 60000,
-  targetROI: 10000,
-  timeLimit: 90, // 1:30 minutes
-  audienceTypes: {
-    "Urban Millennials": {
-      reach: 750000,
-      description: "City dwellers, age 25-40, high disposable income",
-      engagementMultiplier: 1.2, // Engaged audiences produce 20% higher ROI
-    },
-    "Suburban Families": {
-      reach: 1200000,
-      description: "Married with children, homeowners, value-conscious",
-      engagementMultiplier: 0.9,
-    },
-    "Gen Z": {
-      reach: 900000,
-      description: "Age 18-24, tech-native, trend-focused",
-      engagementMultiplier: 1.3,
-    },
-    "Remote Workers": {
-      reach: 600000,
-      description: "WFH professionals, flexible schedules",
-      engagementMultiplier: 1.1,
-    },
-    Retirees: {
-      reach: 450000,
-      description: "Age 65+, leisure-focused, higher brand loyalty",
-      engagementMultiplier: 0.8,
-    },
-  },
-  channelTypes: {
-    "Influencer Marketing": {
-      cost: 18000,
-      description: "Partnerships with relevant content creators",
-      budgetMultiplier: 0.9, // 10% discount when combining certain channels
-    },
-    "Video Streaming": {
-      cost: 25000,
-      description: "Ads on YouTube, Hulu, and other platforms",
-      budgetMultiplier: 1.0,
-    },
-    "Print Media": {
-      cost: 12000,
-      description: "Magazine and newspaper placements",
-      budgetMultiplier: 1.1, // 10% premium for traditional media
-    },
-    "Mobile Apps": {
-      cost: 15000,
-      description: "In-app advertising and promotions",
-      budgetMultiplier: 0.9,
-    },
-    "Outdoor Digital": {
-      cost: 20000,
-      description: "Digital billboards and interactive displays",
-      budgetMultiplier: 1.0,
-    },
-  },
-  // Effectiveness scores (match percentages)
-  effectiveness: {
-    "Urban Millennials": {
-      "Influencer Marketing": 90,
-      "Video Streaming": 80,
-      "Print Media": 30,
-      "Mobile Apps": 85,
-      "Outdoor Digital": 70,
-    },
-    "Suburban Families": {
-      "Influencer Marketing": 55,
-      "Video Streaming": 75,
-      "Print Media": 65,
-      "Mobile Apps": 60,
-      "Outdoor Digital": 50,
-    },
-    "Gen Z": {
-      "Influencer Marketing": 95,
-      "Video Streaming": 85,
-      "Print Media": 20,
-      "Mobile Apps": 90,
-      "Outdoor Digital": 65,
-    },
-    "Remote Workers": {
-      "Influencer Marketing": 70,
-      "Video Streaming": 75,
-      "Print Media": 40,
-      "Mobile Apps": 80,
-      "Outdoor Digital": 30,
-    },
-    Retirees: {
-      "Influencer Marketing": 30,
-      "Video Streaming": 50,
-      "Print Media": 85,
-      "Mobile Apps": 40,
-      "Outdoor Digital": 60,
-    },
-  },
-  // Extra rules and constraints
-  rules: {
-    requiredCombinations: 5, // Must fill all 5 slots
-    channelLimits: {
-      "Video Streaming": 2,
-      "Influencer Marketing": 2,
-    },
-    // Special rules
-    specialEffects: [
-      {
-        name: "Digital Synergy",
-        description:
-          "Combining Mobile Apps and Video Streaming for the same audience gives +15% effectiveness",
-        conditions: {
-          channels: ["Mobile Apps", "Video Streaming"],
-          sameAudience: true,
-        },
-        bonus: {
-          effectivenessBonus: 15,
-        },
-      },
-      {
-        name: "Cross-Generation Reach",
-        description:
-          "Using Print Media for Retirees and Influencers for Gen Z reduces total cost by 10%",
-        conditions: {
-          combinations: [
-            { audience: "Retirees", channel: "Print Media" },
-            { audience: "Gen Z", channel: "Influencer Marketing" },
-          ],
-        },
-        bonus: {
-          budgetDiscount: 0.1,
-        },
-      },
-      {
-        name: "Limited Media Budget",
-        description:
-          "Can only spend 40% of total budget on traditional media (Print, Outdoor)",
-        conditions: {
-          channelTypes: ["Print Media", "Outdoor Digital"],
-          maxBudgetPercentage: 0.4,
-        },
-      },
-    ],
-  },
-};
+// // Round 3 data
+// const ROUND_3_DATA = {
+//   initialBudget: 60000,
+//   targetROI: 10000,
+//   timeLimit: 90, // 1:30 minutes
+//   audienceTypes: {
+//     "Urban Millennials": {
+//       reach: 750000,
+//       description: "City dwellers, age 25-40, high disposable income",
+//       engagementMultiplier: 1.2, // Engaged audiences produce 20% higher ROI
+//     },
+//     "Suburban Families": {
+//       reach: 1200000,
+//       description: "Married with children, homeowners, value-conscious",
+//       engagementMultiplier: 0.9,
+//     },
+//     "Gen Z": {
+//       reach: 900000,
+//       description: "Age 18-24, tech-native, trend-focused",
+//       engagementMultiplier: 1.3,
+//     },
+//     "Remote Workers": {
+//       reach: 600000,
+//       description: "WFH professionals, flexible schedules",
+//       engagementMultiplier: 1.1,
+//     },
+//     Retirees: {
+//       reach: 450000,
+//       description: "Age 65+, leisure-focused, higher brand loyalty",
+//       engagementMultiplier: 0.8,
+//     },
+//   },
+//   channelTypes: {
+//     "Influencer Marketing": {
+//       cost: 18000,
+//       description: "Partnerships with relevant content creators",
+//       budgetMultiplier: 0.9, // 10% discount when combining certain channels
+//     },
+//     "Video Streaming": {
+//       cost: 25000,
+//       description: "Ads on YouTube, Hulu, and other platforms",
+//       budgetMultiplier: 1.0,
+//     },
+//     "Print Media": {
+//       cost: 12000,
+//       description: "Magazine and newspaper placements",
+//       budgetMultiplier: 1.1, // 10% premium for traditional media
+//     },
+//     "Mobile Apps": {
+//       cost: 15000,
+//       description: "In-app advertising and promotions",
+//       budgetMultiplier: 0.9,
+//     },
+//     "Outdoor Digital": {
+//       cost: 20000,
+//       description: "Digital billboards and interactive displays",
+//       budgetMultiplier: 1.0,
+//     },
+//   },
+//   // Effectiveness scores (match percentages)
+//   effectiveness: {
+//     "Urban Millennials": {
+//       "Influencer Marketing": 90,
+//       "Video Streaming": 80,
+//       "Print Media": 30,
+//       "Mobile Apps": 85,
+//       "Outdoor Digital": 70,
+//     },
+//     "Suburban Families": {
+//       "Influencer Marketing": 55,
+//       "Video Streaming": 75,
+//       "Print Media": 65,
+//       "Mobile Apps": 60,
+//       "Outdoor Digital": 50,
+//     },
+//     "Gen Z": {
+//       "Influencer Marketing": 95,
+//       "Video Streaming": 85,
+//       "Print Media": 20,
+//       "Mobile Apps": 90,
+//       "Outdoor Digital": 65,
+//     },
+//     "Remote Workers": {
+//       "Influencer Marketing": 70,
+//       "Video Streaming": 75,
+//       "Print Media": 40,
+//       "Mobile Apps": 80,
+//       "Outdoor Digital": 30,
+//     },
+//     Retirees: {
+//       "Influencer Marketing": 30,
+//       "Video Streaming": 50,
+//       "Print Media": 85,
+//       "Mobile Apps": 40,
+//       "Outdoor Digital": 60,
+//     },
+//   },
+//   // Extra rules and constraints
+//   rules: {
+//     requiredCombinations: 5, // Must fill all 5 slots
+//     channelLimits: {
+//       "Video Streaming": 2,
+//       "Influencer Marketing": 2,
+//     },
+//     // Special rules
+//     specialEffects: [
+//       {
+//         name: "Digital Synergy",
+//         description:
+//           "Combining Mobile Apps and Video Streaming for the same audience gives +15% effectiveness",
+//         conditions: {
+//           channels: ["Mobile Apps", "Video Streaming"],
+//           sameAudience: true,
+//         },
+//         bonus: {
+//           effectivenessBonus: 15,
+//         },
+//       },
+//       {
+//         name: "Cross-Generation Reach",
+//         description:
+//           "Using Print Media for Retirees and Influencers for Gen Z reduces total cost by 10%",
+//         conditions: {
+//           combinations: [
+//             { audience: "Retirees", channel: "Print Media" },
+//             { audience: "Gen Z", channel: "Influencer Marketing" },
+//           ],
+//         },
+//         bonus: {
+//           budgetDiscount: 0.1,
+//         },
+//       },
+//       {
+//         name: "Limited Media Budget",
+//         description:
+//           "Can only spend 40% of total budget on traditional media (Print, Outdoor)",
+//         conditions: {
+//           channelTypes: ["Print Media", "Outdoor Digital"],
+//           maxBudgetPercentage: 0.4,
+//         },
+//       },
+//     ],
+//   },
+// };
 
 // Get round data based on round number
 const getRoundData = (round: number) => {
@@ -300,7 +301,7 @@ const getRoundData = (round: number) => {
     case 1:
       return ROUND_1_DATA;
     case 2:
-      return ROUND_2_DATA;
+      return ROUND_2_DATA; // Use ROUND_2_DATA for round 2
     case 3:
       return ROUND_3_DATA;
     default:
@@ -314,13 +315,22 @@ const calculateEffectiveness = (
   channel: string,
   roundData: any
 ): number => {
-  return roundData.effectiveness[audience]?.[channel] || 0;
+  // Check if audience and channel exist in the round data
+  if (!roundData.effectiveness[audience]) {
+    console.error(`Audience "${audience}" not found in effectiveness data.`);
+    return 0; // Return 0 if audience is not found
+  }
+  if (!roundData.effectiveness[audience][channel]) {
+    console.error(`Channel "${channel}" not found for audience "${audience}".`);
+    return 0; // Return 0 if channel is not found
+  }
+  return roundData.effectiveness[audience][channel];
 };
 
 // Apply special effects from Round 3 rules
 const applySpecialEffects = (
-  droppedItems: any[],
-  scores: any[],
+  droppedItems: unknown[],
+  scores: unknown[],
   roundData: any,
   budget: number,
   initialBudget: number
@@ -401,13 +411,13 @@ const applySpecialEffects = (
                   // Recalculate reach and ROI with new effectiveness
                   reach: Math.floor(
                     ((score.score + effect.bonus.effectivenessBonus) / 100) *
-                      roundData.audienceTypes[combinationAudience].reach
+                    roundData.audienceTypes[combinationAudience].reach
                   ),
                   roi: Math.floor(
                     ((((score.score + effect.bonus.effectivenessBonus) / 100) *
                       roundData.audienceTypes[combinationAudience].reach) /
                       roundData.channelTypes[channelItem.name].cost) *
-                      100
+                    100
                   ),
                 };
               }
@@ -477,9 +487,11 @@ const circularProgressStyle = `
   }
 `;
 
-const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
+const RoundDisplay: React.FC<{ round: number; onComplete: () => void; droppedItems: any[]; setDroppedItems: (items: any[]) => void }> = ({
   round,
   onComplete,
+  droppedItems,
+  setDroppedItems,
 }) => {
   const roundData = getRoundData(round);
   const initialBudget = roundData.initialBudget;
@@ -487,9 +499,6 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
   const timeLimit = roundData.timeLimit;
 
   const [budget, setBudget] = useState(initialBudget);
-  const [droppedItems, setDroppedItems] = useState<
-    { id: string; name: string; type: string; zoneId: number }[]
-  >([]);
   const [scores, setScores] = useState<
     {
       rowIndex: number;
@@ -559,16 +568,16 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
           roundData
         );
 
-        const cost = roundData.channelTypes[channelItem.name].cost;
-        const audienceSize = roundData.audienceTypes[audienceItem.name].reach;
+        const cost = roundData.channelTypes[channelItem.name]?.cost; // Safeguard against undefined cost
+        const audienceSize = roundData.audienceTypes[audienceItem.name]?.reach || 0; // Safeguard against undefined reach
 
         // Apply engagement multiplier if present (Round 3)
         const engagementMultiplier =
-          roundData.audienceTypes[audienceItem.name].engagementMultiplier || 1;
+          roundData.audienceTypes[audienceItem.name]?.engagementMultiplier || 1;
 
         // Apply budget multiplier if present (Round 3)
         const budgetMultiplier =
-          roundData.channelTypes[channelItem.name].budgetMultiplier || 1;
+          roundData.channelTypes[channelItem.name]?.budgetMultiplier || 1;
 
         const adjustedCost = cost * budgetMultiplier;
 
@@ -649,12 +658,16 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
     // Check if we can afford this channel
     let canAfford = true;
     if (item.type === ITEM_TYPES.CHANNEL) {
-      const itemCost = roundData.channelTypes[item.name].cost;
+      const itemCost = roundData.channelTypes[item.name]?.cost; // Safeguard against undefined cost
+      if (itemCost === undefined) {
+        console.error(`Channel "${item.name}" not found in channel types.`);
+        return; // Prevent dropping invalid channel
+      }
       const currentSpend = droppedItems
         .filter((dItem: { type: string }) => dItem.type === ITEM_TYPES.CHANNEL)
         .reduce(
           (sum: number, dItem: { name: string }) =>
-            sum + roundData.channelTypes[dItem.name].cost,
+            sum + roundData.channelTypes[dItem.name]?.cost || 0, // Safeguard against undefined cost
           0
         );
 
@@ -673,6 +686,15 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
     }
 
     if (!zoneHasItem && isValidColumn && canAfford && withinChannelLimits) {
+      // Ensure the audience name is valid for the current round
+      if (item.type === ITEM_TYPES.AUDIENCE) {
+        const audienceNames = Object.keys(roundData.audienceTypes);
+        if (!audienceNames.includes(item.name)) {
+          console.error(`Invalid audience name: ${item.name}`);
+          return; // Prevent dropping invalid audience
+        }
+      }
+
       setDroppedItems(prevItems => [
         ...prevItems,
         {
@@ -701,6 +723,12 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
 
   const totalReach = scores.reduce((sum, item) => sum + item.reach, 0);
   const totalROI = scores.reduce((sum, item) => sum + item.roi, 0);
+
+  // Call onComplete and reset dropped items when the round is completed
+  const handleComplete = () => {
+    onComplete();
+    setDroppedItems([]); // Reset dropped items
+  };
 
   return (
     <DndProvider backend={HTML5Backend}>
@@ -751,7 +779,7 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
         </div> */}
 
         {/* Game Status Bar */}
-        <div className="flex justify-between items-center mb-4 p-6 bg-gray-800 text-white rounded-xl shadow-lg ">
+        <div className="flex justify-between items-center mb-4 p-6 bg-gray-800/90 text-white rounded-xl shadow-lg ">
           <h1 className="text-2xl text-white">Round {round}</h1>
 
           {/* Budget Section with Piggy Bank */}
@@ -798,9 +826,8 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
                   stroke="currentColor"
                   strokeWidth="4"
                   fill="none"
-                  className={`text-${
-                    totalROI > targetROI ? "green" : "yellow"
-                  }-500`}
+                  className={`text-${totalROI > targetROI ? "green" : "yellow"
+                    }-500`}
                   strokeDasharray={`${Math.min(
                     (totalROI / targetROI) * 100,
                     100
@@ -808,9 +835,10 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
                   style={{ animation: "fill 1s ease-out" }}
                 />
               </svg>
-              <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl ">
+              <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl">
                 {Math.min(Math.round((totalROI / targetROI) * 100), 100)}%
               </span>
+
             </div>
             <div>
               <div className="text-lg text-gray-300">ROI Progress</div>
@@ -850,9 +878,8 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
 
           {/* Timer with Circular Animation */}
           <div
-            className={`flex items-center gap-8 bg-gray-700 p-4 rounded-lg w-100 h-25 ${
-              timeLeft < 30 ? "text-red-400" : "text-white"
-            }`}
+            className={`flex items-center gap-8 bg-gray-700 p-4 rounded-lg w-100 h-25 ${timeLeft < 30 ? "text-red-400" : "text-white"
+              }`}
           >
             <div>
               <div className="text-lg text-gray-300">Time Left</div>
@@ -866,7 +893,7 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
           {/* Left Column (Draggable Items) */}
           <div className="flex flex-col gap-8 w-1/4">
             {/* Audience Section */}
-            <div className="bg-blue-300 p-4 rounded-lg border border-blue-900">
+            <div className="bg-blue-300/90 p-4 rounded-lg border border-blue-900">
               <h2 className="text-2xl text-black mb-2">Target Audience</h2>
               <div className="flex flex-col gap-2">
                 {Object.entries(roundData.audienceTypes).map(
@@ -875,11 +902,10 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
                       key={name}
                       name={name}
                       type={ITEM_TYPES.AUDIENCE}
-                      extraInfo={`Reach: ${data.reach.toLocaleString()}${
-                        data.engagementMultiplier
-                          ? ` | Engagement: ${data.engagementMultiplier}x`
-                          : ""
-                      }`}
+                      extraInfo={`${data.reach.toLocaleString()}${data.engagementMultiplier
+                        ? ` | Engagement: ${data.engagementMultiplier}x`
+                        : ""
+                        }`}
                       tooltipText={data.description}
                     />
                   )
@@ -888,7 +914,7 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
             </div>
 
             {/* Channels Section */}
-            <div className="bg-red-300 p-4 rounded-lg border border-red-900">
+            <div className="bg-red-300/90 p-4 rounded-lg border border-red-900">
               <h2 className="text-2xl text-black mb-2">Ad Channels</h2>
               <div className="flex flex-col gap-2">
                 {Object.entries(roundData.channelTypes).map(
@@ -903,13 +929,11 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
                         key={name}
                         name={name}
                         type={ITEM_TYPES.CHANNEL}
-                        extraInfo={`Cost: ₹${data.cost.toLocaleString()}${
-                          data.budgetMultiplier !== 1 && data.budgetMultiplier
-                            ? ` | Modifier: ${
-                                data.budgetMultiplier < 1 ? "-" : "+"
-                              }${Math.abs(1 - data.budgetMultiplier) * 100}%`
-                            : ""
-                        }`}
+                        extraInfo={`₹${data.cost.toLocaleString()}${data.budgetMultiplier !== 1 && data.budgetMultiplier
+                          ? ` | Modifier: ${data.budgetMultiplier < 1 ? "-" : "+"
+                          }${Math.abs(1 - data.budgetMultiplier) * 100}%`
+                          : ""
+                          }`}
                         tooltipText={data.description}
                         disabled={budget < data.cost || isAtLimit}
                         warning={
@@ -924,7 +948,7 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
           </div>
 
           {/* Middle Column (Drop Zones) */}
-          <div className="w-1/2 bg-[#46751c73] border border-[#46751c] p-4 rounded-lg h-fit">
+          <div className="w-1/2 bg-[#b684f6] border border-[#46751c] p-4 rounded-lg h-fit">
             {/* Column Headers */}
             <div className="grid grid-cols-2 mb-2 text-black">
               <div className="text-center">Target Audience</div>
@@ -1000,11 +1024,10 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
                     {/* Effectiveness Score */}
                     {rowScore && rowScore.score > 0 && (
                       <div
-                        className={`mt-2 px-2 pt-1 pb-2 rounded-lg ${
-                          hasSpecialEffect
-                            ? "bg-purple-100 border border-purple-300"
-                            : "bg-gray-100"
-                        }`}
+                        className={`mt-2 px-2 pt-1 pb-2 rounded-lg ${hasSpecialEffect
+                          ? "bg-purple-100 border border-purple-300"
+                          : "bg-gray-100"
+                          }`}
                       >
                         <div className="grid grid-cols-3 gap-2 text-lg text-black">
                           <div>
@@ -1012,13 +1035,12 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
                             {rowScore.score}%
                             <div className="w-full bg-gray-300 rounded-full h-2 mt-1">
                               <div
-                                className={`h-2 rounded-full ${
-                                  rowScore.score > 75
-                                    ? "bg-green-500"
-                                    : rowScore.score > 50
+                                className={`h-2 rounded-full ${rowScore.score > 75
+                                  ? "bg-green-500"
+                                  : rowScore.score > 50
                                     ? "bg-yellow-500"
                                     : "bg-red-500"
-                                }`}
+                                  }`}
                                 style={{ width: `${rowScore.score}%` }}
                               ></div>
                             </div>
@@ -1046,14 +1068,14 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
             )}
 
             {/* Final results section */}
-            <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+            <div className="mt-4 p-4 bg-gray-100/90 rounded-lg">
               <h3 className="text-xl font-medium text-black mb-2">
                 Campaign Results
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="text-black">
-                    <span className="font-medium">Budget Spent:</span> $
+                    <span className="font-medium">Budget Spent:</span> ₹
                     {(initialBudget - budget).toLocaleString()}
                   </p>
                   <p className="text-black">
@@ -1093,13 +1115,12 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
           <div className="w-1/4 flex flex-col gap-4">
             {/* Round Status */}
             <div
-              className={`p-4 rounded-lg border ${
-                goalReached
-                  ? "bg-green-100 border-green-500"
-                  : timeLeft === 0
-                  ? "bg-red-100 border-red-500"
-                  : "bg-yellow-100 border-yellow-500"
-              }`}
+              className={`p-4 rounded-lg border ${goalReached
+                ? "bg-green-100 border-green-500"
+                : timeLeft === 0
+                  ? "bg-red-100/90 border-red-500"
+                  : "bg-yellow-100/90 border-yellow-500"
+                }`}
             >
               <h2 className="text-2xl text-black mb-2">Round Status</h2>
               {goalReached ? (
@@ -1134,7 +1155,7 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
             </div>
 
             {/* Progress Tracking */}
-            <div className="bg-white p-4 rounded-lg border border-gray-300">
+            <div className="bg-white/95 p-4 rounded-lg border border-gray-300">
               <h2 className="text-2xl text-black mb-2">Progress</h2>
               <div className="space-y-3">
                 <div>
@@ -1173,7 +1194,7 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
                           i => i.type === ITEM_TYPES.AUDIENCE
                         ).length /
                           roundData.rules.requiredCombinations) *
-                          100
+                        100
                       )}
                       %
                     </span>
@@ -1182,13 +1203,12 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
                     <div
                       className="bg-blue-600 h-2 rounded-full"
                       style={{
-                        width: `${
-                          (droppedItems.filter(
-                            i => i.type === ITEM_TYPES.AUDIENCE
-                          ).length /
-                            roundData.rules.requiredCombinations) *
+                        width: `${(droppedItems.filter(
+                          i => i.type === ITEM_TYPES.AUDIENCE
+                        ).length /
+                          roundData.rules.requiredCombinations) *
                           100
-                        }%`,
+                          }%`,
                       }}
                     ></div>
                   </div>
@@ -1206,17 +1226,19 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className={`h-2 rounded-full ${
-                        initialBudget - budget > initialBudget * 0.9
+                      className={`h-2 rounded-full ${(initialBudget - budget) / initialBudget > 1
+                        ? "bg-gray-800"
+                        : initialBudget - budget > initialBudget * 0.9
                           ? "bg-red-500"
                           : initialBudget - budget > initialBudget * 0.7
-                          ? "bg-yellow-500"
-                          : "bg-green-500"
-                      }`}
+                            ? "bg-yellow-500"
+                            : "bg-green-500"
+                        }`}
                       style={{
-                        width: `${
-                          ((initialBudget - budget) / initialBudget) * 100
-                        }%`,
+                        width: `${((initialBudget - budget) / initialBudget) * 100 > 100
+                          ? 100
+                          : ((initialBudget - budget) / initialBudget) * 100
+                          }%`,
                       }}
                     ></div>
                   </div>
@@ -1225,7 +1247,7 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
             </div>
 
             {/* Strategy Tips */}
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+            <div className="bg-blue-50/90 p-4 rounded-lg border border-blue-200">
               <h2 className="text-2xl text-black mb-2">Strategy Tips</h2>
               <ul className="list-disc ml-5 text-lg text-blue-800">
                 <li className="mb-1">
@@ -1252,22 +1274,21 @@ const RoundDisplay: React.FC<{ round: number; onComplete: () => void }> = ({
 
             {/* Next Round Button */}
             <Button
-              onClick={onComplete}
+              onClick={handleComplete}
               disabled={!goalReached && timeLeft > 0}
               size="small"
-              className={`mt-auto ${
-                goalReached
-                  ? "bg-green-600 hover:bg-green-700"
-                  : timeLeft === 0
+              className={`mt-auto ${goalReached
+                ? "bg-green-600 hover:bg-green-700"
+                : timeLeft === 0
                   ? "bg-red-600 hover:bg-red-700"
                   : "bg-gray-400 cursor-not-allowed"
-              }`}
+                }`}
               label={
                 goalReached
                   ? "Advance to Next Round"
                   : timeLeft === 0
-                  ? "Retry Round"
-                  : "Complete Campaign First"
+                    ? "Retry Round"
+                    : "Complete Campaign First"
               }
             />
           </div>

@@ -7,7 +7,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 @media (prefers-color-scheme: dark) {

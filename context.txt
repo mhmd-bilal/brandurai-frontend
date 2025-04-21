@@ -1,0 +1,82 @@
+📁 Context File for Cursor Folder: Advertising Competition Game
+📝 Project Overview
+This is a web-based Advertising Competition Game designed as part of a Game Theory project. The game simulates an advertising campaign where players allocate their budget strategically to maximize Reach and ROI (Return on Investment).
+
+Players must select a target audience and pair them with an ad channel, ensuring they optimize their spending to meet campaign goals. The game progresses over three rounds, each increasing in complexity.
+
+🌟 Game Structure
+✅ Round 1: Base Mechanics (Already Implemented)
+Objective: Allocate a ₹30,000 budget to reach as many people as possible while achieving an ROI of at least 5,000.
+
+Gameplay:
+
+Choose a Target Audience (Teenagers, Adults, Seniors).
+
+Choose an Ad Channel (Social Media, TV Ads, Billboards).
+
+Drag and drop audience-ad pairings into three Campaign Slots.
+
+UI Components:
+
+Budget Indicator
+
+ROI Progress Bar
+
+Target Audience & Ad Channels Panel
+
+Campaign Strategy Slots
+
+Round Status & Progress Panel
+
+Strategy Tips Panel
+
+Countdown Timer (2 min per round)
+
+🚀 Round 2: Competition & Budget Complexity
+🆕 New Mechanics:
+✅ Competitor AI: A simulated competitor also selects ad strategies, competing for audience reach.
+✅ Diminishing Returns: Reusing the same strategy lowers effectiveness.
+✅ Dynamic Pricing: Ad costs fluctuate based on demand (e.g., TV ads become expensive if overused).
+
+🔹 Changes from Round 1:
+
+Budget Reduced to ₹25,000.
+
+New Audience Segment: Young Professionals (900,000 reach).
+
+Competitor Insights Panel: Shows hints about competitor strategies.
+
+🔥 Round 3: Market Trends & External Events
+🆕 New Mechanics:
+✅ Market Trends: Certain ad channels get a boost/penalty each round (e.g., "TV Ads are trending among Seniors, increasing effectiveness by 20%").
+✅ Random Events: Unexpected disruptions (e.g., "Social Media Outage – Social Media Ads ineffective this round").
+✅ Carryover Impact: Previous round’s choices affect this round (e.g., if players overspent on TV Ads, competitors increase their spending there).
+
+🔹 Changes from Round 2:
+
+New Ad Channel: Influencer Marketing (₹12,000, highly engaging but limited reach).
+
+Higher ROI Target: 10,000.
+
+Random Event Indicator Panel added.
+
+📂 Folder Structure (Suggested)
+bash
+Copy
+Edit
+/advertising-game
+│── /public
+│── /src
+│   │── /components
+│   │   │── BudgetIndicator.tsx
+│   │   │── CampaignSlot.tsx
+│   │   │── RoundStatus.tsx
+│   │   │── StrategyPanel.tsx
+│   │   └── Timer.tsx
+│   │── /data
+│   │   └── roundData.ts  <- Stores round-specific parameters (budget, audience, ads)
+│   │── /hooks
+│   │── App.tsx
+│── /backend
+│   │── fastapi_server.py  <- API for calculating reach, ROI, and competitor AI
+│── README.md  <- Instructions for expanding Rounds 2 & 3

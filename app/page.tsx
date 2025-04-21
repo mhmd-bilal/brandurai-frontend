@@ -17,8 +17,8 @@ export default function Home() {
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="relative min-h-screen gap-16 py-7 px-8 overflow-y-hidden font-[family-name:var(--font-jersey-15)]">
-        <div className="absolute inset-0 bg-[url('/bg.jpg')] bg-cover bg-center filter blur-md z-0"></div>
-        <div className="relative z-10 bg-white opacity-85 flex flex-col justify-center items-center rounded-xl min-h-[920px] border-4 border-[#75221c]">
+        <div className="absolute inset-0 bg-[url('/bg2.gif')] bg-cover bg-center filter blur-xs z-0"></div>
+        <div className="relative z-10 bg-white/0 opacity-95 flex flex-col justify-center items-center rounded-xl min-h-[920px] border-0 border-[#75221c]">
           {loading ? <Loader /> : <MainScreen />}
         </div>
       </div>{" "}
